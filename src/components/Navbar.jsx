@@ -1,4 +1,6 @@
-import AutoStoriesIcon from '@mui/icons-material/AutoStories';import MenuIcon from "@mui/icons-material/Menu";
+import * as React from "react";
+import AutoStoriesIcon from "@mui/icons-material/AutoStories";
+import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -8,14 +10,13 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import * as React from "react";
 import CartWidget from "./CartWidget";
 
 const pages = [
   { label: "Inicio", link: "/" },
   { label: "Novedades", link: "/cart" },
   { label: "Contacto", link: "/contacto" },
-  { label: "Carro", link: "/carro"}
+  { label: "Carro", link: "/carro" },
 ];
 
 export default function Navbar() {
@@ -119,11 +120,7 @@ export default function Navbar() {
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
-                key={page.label}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
+              <Button key={page.label} onClick={handleCloseNavMenu} sx={{ my: 2, color: "white", display: "block" }}>
                 <a href={page.link}>{page.label}</a>
               </Button>
             ))}
@@ -137,4 +134,3 @@ export default function Navbar() {
     </AppBar>
   );
 }
-
